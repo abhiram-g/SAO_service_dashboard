@@ -28,7 +28,7 @@ def service_function(request, service_chosen, subservice_chosen):
     except Services.DoesNotExist:
         raise Http404("Service does not exist: " + service_chosen)
     except Subservices.DoesNotExist:
-        raise Http404("Subservice does not exist: " + subservice_chosen)
+        raise Http404("Subservice requested does not exist: " + subservice_chosen)
     return render(request, 'dashboard/subservice.html', {'subservice': subservice})
 
 

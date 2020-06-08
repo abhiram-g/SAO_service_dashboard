@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .button {
+                background-color: #555555;
+                border: none;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                width: 150px;
+                height: 30px;
+                background-color: #555555;
+            }
+
+            .button:hover {background-color: #aaaaaa;}
+        </style>
+    </head>
+    <body>
+        <H2>Service: {{ service_name }}</H2>
+        {% if subservices %}
+            <br>
+            <h4>Please select a subservice:</h4>
+
+            <ul>
+                {% for subservice in subservices %}
+                <li><button class="button" onclick="window.location.href='{{ subservice.subservice_name }}/'">{{ subservice.subservice_name }}</button></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <H4>No subservices for this service</H4>
+        {% endif %}
+    </body>
+</html>

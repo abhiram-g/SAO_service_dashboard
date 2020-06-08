@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .button {
+                background-color: #555555;
+                border: none;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                width: 150px;
+                background-color: #555555;
+            }
+
+            .button:hover {background-color: #aaaaaa;}
+        </style>
+    </head>
+    <body>
+        <H2>Welcome!</H2>
+        <H3>Please choose one of the following services</H3>
+
+        <ol>
+            {% for service in all_services %}
+            <li><button class="button"  onclick="window.location.href='{{ service.service_name }}/'">{{service.service_name}}</button></li>
+            {% endfor %}
+        </ol>
+    </body>
+</html>
+
